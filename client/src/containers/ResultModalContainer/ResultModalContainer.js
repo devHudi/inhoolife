@@ -1,0 +1,86 @@
+import React, { Component } from 'react'
+import Result from '../../components/Result/Result'
+import SpinnerContainer from '../SpinnerContainer/SpinnerContainer'
+import './ResultModalContainer.css'
+import closeBtn from './close.png'
+import axios from 'axios'
+
+class ResultModalContainer extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      opened: false,
+      displayStyle: {
+        top: '100%'
+      },
+      modal: {
+        name: "",
+        tags: [],
+        address: ""
+      },
+      spinnerVisible: false
+    }
+  }
+
+  toggleModal() {
+
+    if (this.state.opened) { //숨길때
+      this.setState({
+        opened: !this.state.opened
+      })
+
+      setTimeout(() => {
+        this.setState({
+          displayStyle: {top: '100%'} //숨기기
+        })
+      }, 700)
+    } else {
+
+      this.setState({
+        spinnerVisible: true
+      }, () => {
+        console.log(this.state.spinnerVisible)
+        setTimeout(() => {
+          this.setState({
+            spinnerVisible: false,
+            opened: !this.state.opened,
+            displayStyle: {top: '0'}, //보이기
+          })
+        }, 3000)
+      })
+
+      axios.get('/api/restaurants/choice?tags=' + document.getElementById("tags").value)
+        .then((response) => {
+          this.setState({
+            modal: {
+              name: response.data.name,
+              tags: response.data.tags,
+              address: response.data.address
+            }
+          })
+          console.log(response);
+        })
+    }
+  }
+
+  componentWillReceiveProps() {
+    this.toggleModal()
+  }
+
+  render() {
+    return(
+      <div id="ResultModal" className={ this.state.opened ? "opened" : "" } style={ this.state.displayStyle } >
+        <SpinnerContainer visible={ this.state.spinnerVisible }/>
+        <div className="wrapper">
+          <div className="modal">
+            <img src={closeBtn} className="closeBtn" onClick={e => this.toggleModal()}/>
+            <Result name={this.state.modal.name} tags={this.state.modal.tags} address={this.state.modal.address}/>
+          </div>
+        </div>
+      </div>
+    )
+  }
+}
+
+export default ResultModalContainer

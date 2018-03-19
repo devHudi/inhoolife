@@ -1,0 +1,20 @@
+* {
+  outline: none;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  background-image: url('../img/background.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+div#container {
+  margin: 0 auto;
+  max-width: 1024px;
+  text-align: center;
+}

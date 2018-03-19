@@ -1,0 +1,55 @@
+#Result {
+
+}
+
+  #Result .content {
+    padding: 50px 20px 0 20px;
+    height: 30%;
+    box-sizing: border-box;
+  }
+
+    #Result .content h1 {
+      margin: 0;
+      font-weight: lighter;
+      font-size: 40pt;
+    }
+
+    #Result .content h2 {
+      margin: 3px 0 0 0;
+      font-size: 20pt;
+    }
+
+    #Result .content h3 {
+      margin: 15px 0 0 0;
+      font-size: 15pt;
+      font-weight: normal;
+      color: #343434;
+    }
+
+  #Result .map {
+    position: absolute;
+    width: 100%;
+    max-width: 800px;
+    height: 70%;
+    top: 30%;
+  }
+
+@media screen and (max-width : 767px) {
+  #Result .content { 
+    padding: 30px 20px 0 20px;
+  }
+
+  #Result .content h1 {
+    font-size: 27pt;
+  }
+
+  #Result .content h2 {
+    margin: 3px 0 0 0;
+    font-size: 13pt;
+  }
+
+  #Result .content h3 {
+    margin: 15px 0 0 0;
+    font-size: 12pt;
+  }
+}

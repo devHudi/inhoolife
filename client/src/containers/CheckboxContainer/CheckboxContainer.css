@@ -1,0 +1,24 @@
+button.checkbox {
+  margin-right: 5px;
+  margin-bottom: 5px;
+  padding: 7px 20px;
+  background-color: transparent;
+  border: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  font-size: 14pt;
+  font-weight: lighter;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button.checkbox:hover {
+  box-shadow: 0px 0px 5px rgba(255, 255, 255, .6);
+}
+
+button.checkbox.checked {
+  top: -3px;
+  background-color: rgba(255, 255, 255, .3);
+  box-shadow: 0px 0px 7px rgba(255, 255, 255, .8);
+}
