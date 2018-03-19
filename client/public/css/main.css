@@ -12,8 +12,9 @@ html, body {
 
 body {
   background-image: url('../img/background.jpg');
-  background-size: cover;
+  background-size: cover cover;
   background-position: center;
+  background-attachment: fixed;
   margin: 0 40px;
 }
 
@@ -31,7 +32,7 @@ div#container {
   }
 
 footer {
-  margin: 20px auto 30px auto;
+  margin: 20px auto 100px auto;
   padding-top: 10px;
   text-align: center;
   font-weight: lighter;
