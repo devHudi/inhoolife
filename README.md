@@ -1,2 +1,2 @@
-# inhoolife
-Restaurant Roulette for Inha Univ Students
+# 인후라이프
+인하대학교 학생들을 위한

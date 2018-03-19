@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    
+    <title> 추가하는 페이지 </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+      @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+      * {
+        font-family: 'Spoqa Han Sans', 'Spoqa Han Sans JP', 'Sans-serif';
+      }
+
+      body {
+        margin-top: 100px;
+      }
+
+      form label {
+        font-size: 20pt;
+        font-weight: lighter;
+      }
+
+      form * {
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <form action="/api/restaurants" method="POST">
+        <label> 새로운 업체 등록 </label>
+        <div class="form-group">
+          <input class="form-control" name="name" placeholder="이름">
+          <input class="form-control" name="address" placeholder="주소">
+          <input class="form-control" name="tags" placeholder="태그1,태그2">
+          <button class="btn btn-primary" type="submit">추가하기</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

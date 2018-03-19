@@ -14,7 +14,15 @@ exports.getRandomRestaurant = (req, res) => {
 
     Restaurant.find({"tags": {'$all': tags}}, (err, doc) => {
       const rndIndex = Math.floor((Math.random() * doc.length))
-      res.send(doc[rndIndex])
+      if (doc[rndIndex] === undefined) {
+        res.send({
+          name: "식당이 없어요 ㅜ-ㅜ",
+          tags: ["태그를", "다시", "설정해주세요"],
+          address: "(슬픈 개구리 사진)"
+        })
+      } else {
+        res.send(doc[rndIndex])
+      }
     })
   } else {
     Restaurant.find({}, (err, doc) => {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Result from '../../components/Result/Result'
+import ResultContainer from '../ResultContainer/ResultContainer'
 import SpinnerContainer from '../SpinnerContainer/SpinnerContainer'
 import './ResultModalContainer.css'
 import closeBtn from './close.png'
@@ -40,7 +40,6 @@ class ResultModalContainer extends Component {
       this.setState({
         spinnerVisible: true
       }, () => {
-        console.log(this.state.spinnerVisible)
         setTimeout(() => {
           this.setState({
             spinnerVisible: false,
@@ -59,7 +58,6 @@ class ResultModalContainer extends Component {
               address: response.data.address
             }
           })
-          console.log(response);
         })
     }
   }
@@ -75,7 +73,7 @@ class ResultModalContainer extends Component {
         <div className="wrapper">
           <div className="modal">
             <img src={closeBtn} className="closeBtn" onClick={e => this.toggleModal()}/>
-            <Result name={this.state.modal.name} tags={this.state.modal.tags} address={this.state.modal.address}/>
+            <ResultContainer name={this.state.modal.name} tags={this.state.modal.tags} address={this.state.modal.address}/>
           </div>
         </div>
       </div>

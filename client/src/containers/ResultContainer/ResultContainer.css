@@ -3,7 +3,7 @@
 }
 
   #Result .content {
-    padding: 50px 20px 0 20px;
+    padding: 20px 20px 0 20px;
     height: 30%;
     box-sizing: border-box;
   }
@@ -26,17 +26,33 @@
       color: #343434;
     }
 
-  #Result .map {
+    #Result .content label {
+      margin: 3px 0 0 0;
+      font-size: 9pt;
+      font-weight: normal;
+      color: #999999;
+      line-height: 120%;
+    }
+
+  #Result .bottom-container {
     position: absolute;
+    top: 30%;
+    height: 70%;
     width: 100%;
     max-width: 800px;
-    height: 70%;
-    top: 30%;
   }
+
+    #Result .bottom-container .map {
+      position: relative;
+      bottom: 0;
+      top: 30%;
+      height: 70%;
+      width: 100%;
+    }
 
 @media screen and (max-width : 767px) {
   #Result .content { 
-    padding: 30px 20px 0 20px;
+    padding: 0px 20px 0 20px;
   }
 
   #Result .content h1 {
@@ -49,7 +65,7 @@
   }
 
   #Result .content h3 {
-    margin: 15px 0 0 0;
+    margin: 8px 0 0 0;
     font-size: 12pt;
   }
 }

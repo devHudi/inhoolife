@@ -1,0 +1,15 @@
+#ResultImage {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 29%;
+  margin-bottom: 1%;
+  white-space: nowrap;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+  #ResultImage img {
+    margin: 0 2.5px;
+    height: 100%;
+  }

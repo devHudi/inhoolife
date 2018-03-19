@@ -16,6 +16,6 @@ mongoose.connect("mongodb://localhost/inhoolife")
 
 app.use(express.static('../client/build'))
 
-app.listen(3000, () => {
+app.listen(3002, () => {
   console.log("인후 룰렛 서버가 실행되었습니다.")
 })

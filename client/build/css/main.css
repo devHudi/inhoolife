@@ -14,7 +14,7 @@ body {
   background-image: url('../img/background.jpg');
   background-size: cover;
   background-position: center;
-  margin: 0 20px;
+  margin: 0 40px;
 }
 
 div#container {
@@ -31,13 +31,14 @@ div#container {
   }
 
 footer {
-  margin: 20px auto 0 auto;
+  margin: 20px auto 30px auto;
   padding-top: 10px;
   text-align: center;
   font-weight: lighter;
   font-size: 10pt;
   color: #FFFFFF;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, .5);
+  line-height: 190%;
   max-width: 400px;
 }
 
