@@ -46,7 +46,7 @@ class ResultModalContainer extends Component {
             opened: !this.state.opened,
             displayStyle: {top: '0'}, //보이기
           })
-        }, 3000)
+        }, 1500)
       })
 
       axios.get('/api/restaurants/choice?tags=' + document.getElementById("tags").value)
