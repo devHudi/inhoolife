@@ -9,7 +9,8 @@ class CheckboxWrapperContainer extends Component {
 
     this.state = {
       checkboxes: [],
-      tags: ""
+      tags: "",
+      tagOpened: false
     }
   }
 
@@ -56,6 +57,12 @@ class CheckboxWrapperContainer extends Component {
     this.setState(newCheckboxes)
   }
 
+  handleTagopenClick(e) {
+    this.setState({
+      tagOpened: !this.state.tagOpened
+    })
+  }
+
   render() {
     var tagString = ""
     for (var i = 0; i < this.state.checkboxes.length; i ++) {
@@ -71,12 +78,17 @@ class CheckboxWrapperContainer extends Component {
     return(
       <div id="CheckboxWrapper">
         <input id="tags" hidden value={tagString}/>
-        <label> 태그를 선택해주세요. (필수아님) </label>
-        {
-          this.state.checkboxes.map((checkbox, i) => {
-            return(<CheckboxContainer name={checkbox.name} i={i} onClick={e => this.checkboxClicked(e)} checked={checkbox.checked}/>)
-          })
-        }
+        <label> 태그를 선택해주세요. (필수아님) (스크롤가능) </label>
+        <div className={this.state.tagOpened ? "tag-container opened" : "tag-container"}>
+          {
+            this.state.checkboxes.map((checkbox, i) => {
+              return(<CheckboxContainer name={checkbox.name} i={i} onClick={e => this.checkboxClicked(e)} checked={checkbox.checked}/>)
+            })
+          }
+        </div>
+        <div className="btn-open" onClick={ e => this.handleTagopenClick(e) }> 
+          {this.state.tagOpened ? "태그 목록 접기" : "태그 리스트 펼쳐보기"}
+        </div>
       </div>
     )
   }
