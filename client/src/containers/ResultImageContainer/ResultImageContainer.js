@@ -11,6 +11,7 @@ class ResultImageContainer extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (nextProps)
     this.setState({
       images: nextProps.images
     })
@@ -21,7 +22,7 @@ class ResultImageContainer extends Component {
       <div id="ResultImage">
         {
           this.state.images.map((image) => {
-            return(<img src={image} />)
+            return(<img src={image} onError={(e)=>{e.target.style.display='none'}}/>)
           })
         }
       </div>

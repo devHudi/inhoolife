@@ -55,9 +55,7 @@ exports.getTags = (req, res) => {
   Restaurant.find({}, (err, doc) => {
     for (var i = 0; i < doc.length; i ++) {
       for (var j = 0; j < doc[i].tags.length; j ++) {
-        if (tags.indexOf(doc[i].tags[j]) == -1) {
-          tags.push(doc[i].tags[j])
-        }
+        tags.push(doc[i].tags[j])
       }
     }
 
