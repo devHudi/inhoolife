@@ -21,11 +21,28 @@ class ResultContainer extends Component {
         images: [sadFrog, sadFrog, sadFrog, sadFrog, sadFrog]
       })
     } else {
-      axios.get('/api/image/' + encodeURI("인하대 " + nextProps.name))
+      var images = []
+      axios.get('/api/image/' + "인하대" + encodeURI(nextProps.name))
       .then((response) => {
-        this.setState({
-          images: response.data
+        response.data.map((image) => {
+          images.push(image)
         })
+        axios.get('/api/image/' + "인후" + encodeURI(nextProps.name))
+        .then((response) => {
+          response.data.map((image) => {
+            images.push(image)
+          })
+          axios.get('/api/image/' + encodeURI(nextProps.name) + " 식당")
+          .then((response) => {
+            response.data.map((image) => {
+              images.push(image)
+            })
+            this.setState({
+              images
+            })
+          })
+        })
+        
       })
     }
   }

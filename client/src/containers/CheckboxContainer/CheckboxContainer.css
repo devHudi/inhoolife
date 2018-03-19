@@ -15,6 +15,7 @@ button.checkbox {
   text-overflow: ellipsis;
   white-space: nowrap;
   opacity: 0.8;
+  letter-spacing: -2px;
   transition: all 0.2s;
 }
 
@@ -24,7 +25,6 @@ button.checkbox:hover {
 }
 
 button.checkbox.checked {
-  letter-spacing: -1px;
   opacity: 1;
   top: 0px;
   color: #000000;

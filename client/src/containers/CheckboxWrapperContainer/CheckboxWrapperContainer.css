@@ -27,10 +27,10 @@
 
   #CheckboxWrapper .tag-container {
     height: 150px;
-    overflow-y: scroll;
+    overflow-y: hidden;
     transition: all 0.7s;
   }
 
   #CheckboxWrapper .tag-container.opened {
-    height: 494px;
+    height: auto;
   }

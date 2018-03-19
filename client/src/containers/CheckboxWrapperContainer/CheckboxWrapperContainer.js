@@ -78,7 +78,7 @@ class CheckboxWrapperContainer extends Component {
     return(
       <div id="CheckboxWrapper">
         <input id="tags" hidden value={tagString}/>
-        <label> 태그를 선택해주세요. (필수아님) (스크롤가능) </label>
+        <label> 태그를 선택해주세요. (필수아님) </label>
         <div className={this.state.tagOpened ? "tag-container opened" : "tag-container"}>
           {
             this.state.checkboxes.map((checkbox, i) => {
