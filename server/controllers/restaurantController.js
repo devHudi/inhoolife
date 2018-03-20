@@ -11,8 +11,7 @@ exports.getRandomRestaurant = (req, res) => {
   var tags = []
   if (req.query.tags) {
     tags = req.query.tags.split(",")
-
-    Restaurant.find({"tags": {'$all': tags}}, (err, doc) => {
+    /*Restaurant.find({"tags": {'$all': tags}}, (err, doc) => {
       const rndIndex = Math.floor((Math.random() * doc.length))
       if (doc[rndIndex] === undefined) {
         res.send({
@@ -23,6 +22,19 @@ exports.getRandomRestaurant = (req, res) => {
       } else {
         res.send(doc[rndIndex])
       }
+    })*/
+    Restaurant.find({}, (err, doc) => {
+      var restaurants = []
+      doc.map((restaurant) => {
+        tags.map((tag) => {
+          if (restaurant.tags.indexOf(tag) != -1) {
+            restaurants.push(restaurant)
+          }
+        })
+      })
+
+      const rndIndex = Math.floor((Math.random() * restaurants.length))
+      res.send(restaurants[rndIndex])
     })
   } else {
     Restaurant.find({}, (err, doc) => {
