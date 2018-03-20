@@ -15,7 +15,7 @@ body {
   background-size: cover cover;
   background-position: center;
   margin: 0 40px;
-  padding-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 div#container {
