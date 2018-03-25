@@ -9,7 +9,8 @@
 }
 
   #Spinner label {
-    margin-top: 5px;
+    margin: 5px 0 10px 0;
+    display: block;
     color: #FFFFFF;
     font-weight: bold;
     font-size: 15pt;
