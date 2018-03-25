@@ -11,6 +11,10 @@ class SpinnerContainer extends Component {
       comment: ""
     }
   }
+  
+  componentDidMount() {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.visible) {
@@ -46,14 +50,10 @@ class SpinnerContainer extends Component {
         <DoubleBounce color="#FFFFFF" size={60}/>
         <label> { this.state.comment } </label>
 
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <ins className="adsbygoogle"
             style={{display:"inline-block", width:"320px", height:"100px"}}
             data-ad-client="ca-pub-2093688085838727"
             data-ad-slot="5764403476"></ins>
-        <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
         </div></div>
       </div>
     )
