@@ -16,6 +16,20 @@ mongoose.connect("mongodb://localhost/inhoolife")
 
 app.use(express.static('../client/build'))
 
+app.get("/list", (req, res) => {
+  var Restaurant = require('./models/restaurantModel')
+
+  Restaurant.find({}, (err, doc) => {
+    var text = "<meta charset='utf-8'>"
+
+    doc.map((restaurant) => {
+      text = text + restaurant.name + "<br>"
+    })
+
+    res.send(text)
+  })
+})
+
 app.listen(3002, () => {
   console.log("인후 룰렛 서버가 실행되었습니다.")
 })
