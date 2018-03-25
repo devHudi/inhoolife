@@ -13,7 +13,7 @@ class SpinnerContainer extends Component {
   }
   
   componentDidMount() {
-    (adsbygoogle = window.adsbygoogle || []).push({});
+    (window.adsbygoogle = window.adsbygoogle || []).push({});
   }
 
   componentWillReceiveProps(nextProps) {
