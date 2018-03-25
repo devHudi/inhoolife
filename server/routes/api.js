@@ -14,7 +14,7 @@ router.post("/restaurants", controller.createRestaurant)
 router.get("/image/:q", (req, res) => {
   const client_id_list = ["nlYWfDLqkNqcF8SFm2J7", "MpqCm5ceV8DWqbixPYzV"]
   const client_secret_list = ["1IHOglves1", "MGIG6Ka364"]
-  const rndIndex =  Math.floor(Math.random() * (client_id_list.length - 1))
+  const rndIndex =  Math.floor(Math.random() * (client_id_list.length))
 
   const client_id = client_id_list[rndIndex]
   const client_secret = client_secret_list[rndIndex]
