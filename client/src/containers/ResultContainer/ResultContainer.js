@@ -56,8 +56,8 @@ class ResultContainer extends Component {
 
     if (this.props.name == "") {
       name = "타이틀이 없습니다"
-      address = "인천광역시 부평구 부개동 대동아파트"
-      tags = ["제작자","블로그","방문","해주세요"]
+      address = ""
+      tags = ["이거", "느낌이", "쎄한게", "오류가", "난것같은데"]
     }
 
     return (
