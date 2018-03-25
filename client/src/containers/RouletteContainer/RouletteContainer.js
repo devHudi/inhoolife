@@ -22,6 +22,7 @@ class RouletteWrapperContainer extends Component {
       <div id="Roulette">
         <ResultModalContainer opened={this.state.modalOpened}/>
         <button onClick={ e => this.handleClick(e) }> 룰렛 돌리기 </button>
+        <div className="restaurantsList"> <a href="/list"> 등록된 식당 리스트 확인하기 </a> </div>
       </div>
     )
   }

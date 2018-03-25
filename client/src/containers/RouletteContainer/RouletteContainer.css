@@ -1,5 +1,4 @@
 #Roulette button {
-  margin-bottom: 40px;
   width: 100%;
   height: 50px;
   max-width: 400px;
@@ -20,3 +19,13 @@
   font-weight: normal;
   letter-spacing: 9px;
 }
+
+#Roulette .restaurantsList {
+  margin: 8px 0 40px 0;  
+}
+
+  #Roulette .restaurantsList a {
+    color: #FFFFFF;
+    font-weight: lighter;
+    font-size: 10pt;
+  }
